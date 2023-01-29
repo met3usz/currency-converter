@@ -1,0 +1,17 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  font-size: 18px;
+  color: hsl(208, 100%, 97%);
+  background-color: hsl(0, 0%, 55%);
+}
