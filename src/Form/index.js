@@ -21,7 +21,7 @@ const Form = () => {
       <fieldset className="form__fieldset">
         <legend className="form__legend">Kalkulator walut</legend>
         <p>
-          <label className="form__label" for="cost">
+          <label className="form__label" htmlFor="cost">
             Wpisz kwotę w Euro:
           </label>
           <input
@@ -37,7 +37,7 @@ const Form = () => {
         </p>
 
         <p>
-          <label className="form__label" for="rate">
+          <label className="form__label" htmlFor="rate">
             Wpisz aktualny kurs Euro:
           </label>
           <input
