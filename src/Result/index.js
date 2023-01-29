@@ -1,11 +1,12 @@
 import './style.css';
 
-const Result = () => {
+const Result = ({ result }) => {
   return (
     <div className="result">
       <>
         <p className="result__paragraph">
-          Kwota po przeliczeniu: <span className="result__span">0</span> PLN
+          Kwota po przeliczeniu: <span className="result__span">{result}</span>{' '}
+          PLN
         </p>
       </>
     </div>
