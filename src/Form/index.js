@@ -1,19 +1,28 @@
 import { useState } from 'react';
 import './style.css';
 import Result from '../Result';
+import { myCurrencies } from './myCurrencies';
 
 const Form = () => {
-  const [cost, setCost] = useState('');
-  const [rate, setRate] = useState('');
-  const [result, setResult] = useState('0');
+  const [amount, setamount] = useState('');
+  const [rateName, setRateName] = useState(myCurrencies[0].name);
+  const [result, setResult] = useState('');
 
-  const calculateResult = (cost, rate) => {
-    return setResult(cost * rate);
+  const calculateResult = (amount, rateName) => {
+    const { avgRate } = myCurrencies.find(({ name }) => name === rateName);
+    setResult({
+      converted: (amount / avgRate).toFixed(2),
+      rateName,
+    });
   };
 
   const onFormSubmit = (event) => {
     event.preventDefault();
-    calculateResult(cost, rate);
+    calculateResult(amount, rateName);
+  };
+
+  const resetInput = () => {
+    setamount('');
   };
 
   return (
@@ -22,7 +31,7 @@ const Form = () => {
         <legend className="form__legend">Kalkulator walut</legend>
         <p>
           <label className="form__label" htmlFor="cost">
-            Wpisz kwotę w Euro:
+            Wpisz kwotę:
           </label>
           <input
             className="form__input"
@@ -30,29 +39,35 @@ const Form = () => {
             name="cost"
             min="1"
             required
+            placeholder="PLN"
             step="0.01"
-            value={cost}
-            onChange={({ target }) => setCost(target.value)}
+            value={amount}
+            onChange={({ target }) => setamount(target.value)}
           />
         </p>
 
         <p>
           <label className="form__label" htmlFor="rate">
-            Wpisz aktualny kurs Euro:
+            Wybierz walutę:
           </label>
-          <input
-            className="form__input"
-            type="number"
-            name="rate"
-            min="1"
-            required
-            step="0.01"
-            value={rate}
-            onChange={({ target }) => setRate(target.value)}
-          />
+          <select
+            value={rateName}
+            onChange={({ target }) => setRateName(target.value)}
+          >
+            {myCurrencies.map((rateName) => (
+              <option key={rateName.name} value={rateName.name}>
+                {rateName.name}
+              </option>
+            ))}
+          </select>
         </p>
         <input className="form__button " type="submit" value="Przelicz!" />
-        <input className="form__button" type="reset" value="Wyczyść!" />
+        <input
+          className="form__button"
+          type="reset"
+          value="Wyczyść!"
+          onClick={resetInput}
+        />
       </fieldset>
       <Result result={result} />
     </form>

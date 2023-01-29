@@ -1,16 +1,17 @@
 import './style.css';
 
 const Result = ({ result }) => {
-  return (
-    <div className="result">
+  <div className="result">
+    {result !== '' && (
       <>
         <p className="result__paragraph">
-          Kwota po przeliczeniu: <span className="result__span">{result}</span>{' '}
-          PLN
+          Kwota po przeliczeniu:{' '}
+          <span className="result__span">{result.converted}</span>{' '}
+          {result.rateName}
         </p>
       </>
-    </div>
-  );
+    )}
+  </div>;
 };
 
 export default Result;
