@@ -1,6 +1,7 @@
 {
   "name": "currency-converter",
   "version": "0.1.0",
+  "homepage": "https://met3usz.github.io/currency-converter/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
