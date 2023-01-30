@@ -1,44 +1,71 @@
-.form {
+.form__fieldset {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  padding: 15px;
-  margin: 30px;
-}
-
-.form__fieldset {
   border-radius: 10px;
-  padding: 20px;
-  text-align: center;
+  min-width: 400px;
+  border: 2px solid hsl(0, 7%, 71%);
 }
 
-.form__label {
-  display: inline-block;
-  min-width: 250px;
-  margin-right: 10px;
+@media (max-width: 450px) {
+  .form__fieldset {
+    min-width: 300px;
+  }
 }
 
-.form__input {
-  border: 1px solid hsl(0, 0%, 0%);
+.fieldset__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-items: center;
+  align-items: center;
+}
+
+.fieldset__paragraph {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fieldset__input {
   outline: none;
-  max-width: 250px;
-  border-radius: 5px;
+  border: none;
+  border-radius: 10px;
+  padding: 8px;
+  max-width: 100px;
+  background-color: hsl(0, 7%, 71%);
 }
 
-.form__button {
+.fieldset__select {
   outline: none;
-  border: 1px solid hsl(0, 0%, 0%);
-  border-radius: 5px;
-  padding: 10px;
-  background-color: hsl(180, 100%, 97%);
+  border: none;
+  border-radius: 10px;
+  padding: 8px;
+  background-color: hsl(0, 7%, 71%);
+  cursor: pointer;
 }
 
-.form__paragraph {
+.fieldset__button {
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  padding: 8px;
+  margin: 0 5px;
+  background-color: hsl(0, 7%, 71%);
+  cursor: pointer;
+}
+
+.form__paragraph--italic {
   font-size: 14px;
   font-style: italic;
 }
 .result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: auto;
   text-align: center;
 }
 

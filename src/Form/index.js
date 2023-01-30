@@ -30,54 +30,64 @@ const Form = () => {
     <>
       <form className="form" onSubmit={onFormSubmit}>
         <fieldset className="form__fieldset">
-          <legend className="form__legend">Kalkulator walut</legend>
-          <p>
-            <label className="form__label" htmlFor="cost">
-              Wpisz kwotę w PLN:
-            </label>
-            <input
-              className="form__input"
-              type="number"
-              name="cost"
-              min="1"
-              required
-              placeholder="PLN"
-              step="0.01"
-              value={amount}
-              onChange={({ target }) => setAmount(target.value)}
-            />
-          </p>
-
-          <p>
-            <label className="form__label" htmlFor="rate">
-              Wybierz walutę:
-            </label>
-            <select
-              value={rateName}
-              onChange={({ target }) => setRateName(target.value)}
-            >
-              {myCurrencies.map((rateName) => (
-                <option key={rateName.name} value={rateName.name}>
-                  {rateName.name}
-                </option>
-              ))}
-            </select>
-          </p>
-          <input className="form__button " type="submit" value="Przelicz!" />
-          <input
-            className="form__button"
-            type="reset"
-            value="Wyczyść!"
-            onClick={resetUserInput}
-          />
-          <p className="form__paragraph">Kurs walut z dnia 29.01.2023</p>
+          <legend>Kalkulator walut</legend>
+          <div className="fieldset__wrapper">
+            <p className="fieldset__paragraph">
+              <label className="fieldset__label" htmlFor="cost">
+                Wpisz kwotę w PLN:
+              </label>
+              <input
+                className="fieldset__input"
+                type="number"
+                name="cost"
+                min="1"
+                required
+                placeholder="PLN"
+                step="0.01"
+                value={amount}
+                onChange={({ target }) => setAmount(target.value)}
+              />
+            </p>
+            <p className="fieldset__paragraph">
+              <label className="fieldset__label" htmlFor="rate">
+                Wybierz walutę:
+              </label>
+              <select
+                className="fieldset__select"
+                value={rateName}
+                onChange={({ target }) => setRateName(target.value)}
+              >
+                {myCurrencies.map((rateName) => (
+                  <option key={rateName.name} value={rateName.name}>
+                    {rateName.name}
+                  </option>
+                ))}
+              </select>
+            </p>
+            <section className="fieldset__buttons">
+              <input
+                className="fieldset__button"
+                type="submit"
+                value="Przelicz!"
+              />
+              <input
+                className="fieldset__button"
+                type="reset"
+                value="Wyczyść!"
+                onClick={resetUserInput}
+              />
+            </section>
+            <p className="form__paragraph--italic">
+              Średni kurs walut z dnia 29.01.2023
+            </p>
+          </div>
         </fieldset>
       </form>
       <div className="result">
-        <p className="result__paragraph">
-          Kwota po przeliczeniu:{' '}
-          <span className="result__span">{result.converted}</span> {result.name}
-        </p>
+        <p className="result__paragraph">Kwota po przeliczeniu:</p>
+        <span className="result__span">
+          {result.converted} {result.name}
+        </span>
       </div>
     </>
   );
