@@ -33,3 +33,15 @@
   padding: 10px;
   background-color: hsl(180, 100%, 97%);
 }
+
+.form__paragraph {
+  font-size: 14px;
+  font-style: italic;
+}
+.result {
+  text-align: center;
+}
+
+.result__span {
+  font-weight: bold;
+}
