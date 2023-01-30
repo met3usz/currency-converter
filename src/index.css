@@ -15,9 +15,11 @@ body {
   min-height: 100vh;
   padding: 20px;
   background-image: url(./img/bgImage.png);
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
   font-size: 18px;
-  color: hsl(208, 100%, 97%);
+  color: hsl(0, 0%, 30%);
   background-color: hsl(0, 0%, 30%);
 }

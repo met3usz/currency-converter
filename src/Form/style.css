@@ -1,10 +1,19 @@
+:root {
+  --clr-userInput: hsl(80, 100%, 80%);
+  --inputBorder: 2px solid hsl(80, 100%, 35%);
+}
+
 .form__fieldset {
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
   min-width: 400px;
-  border: 2px solid hsl(0, 7%, 71%);
+  border: var(--inputBorder);
+  background-color: hsl(0, 0%, 100%);
+  -webkit-box-shadow: 10px 10px 25px 0px rgba(117, 117, 117, 1);
+  -moz-box-shadow: 10px 10px 25px 0px rgba(117, 117, 117, 1);
+  box-shadow: 10px 10px 25px 0px rgba(117, 117, 117, 1);
 }
 
 @media (max-width: 450px) {
@@ -30,30 +39,35 @@
 
 .fieldset__input {
   outline: none;
-  border: none;
+  border: var(--inputBorder);
   border-radius: 10px;
   padding: 8px;
   max-width: 100px;
-  background-color: hsl(0, 7%, 71%);
+  background-color: var(--clr-userInput);
 }
 
 .fieldset__select {
   outline: none;
-  border: none;
+  border: var(--inputBorder);
   border-radius: 10px;
   padding: 8px;
-  background-color: hsl(0, 7%, 71%);
+  background-color: var(--clr-userInput);
   cursor: pointer;
 }
 
 .fieldset__button {
   outline: none;
-  border: none;
+  border: var(--inputBorder);
   border-radius: 10px;
   padding: 8px;
   margin: 0 5px;
-  background-color: hsl(0, 7%, 71%);
+  background-color: var(--clr-userInput);
+  transition: 0.5s ease;
   cursor: pointer;
+}
+
+.fieldset__button:hover {
+  transform: scale(1.05);
 }
 
 .form__paragraph--italic {
