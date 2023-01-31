@@ -9,6 +9,16 @@ Currency Converter React App helps you quickly and easily convert currencies in 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Tools used in the project
+
+- HTML
+- JavaScript
+- CSS
+- Grid
+- Flex
+- BEM
+- ES6 & Features
+
 ## Available Scripts
 
 In the project directory, you can run:
