@@ -74,15 +74,3 @@
   font-size: 14px;
   font-style: italic;
 }
-.result {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  overflow: auto;
-  text-align: center;
-}
-
-.result__span {
-  font-weight: bold;
-}

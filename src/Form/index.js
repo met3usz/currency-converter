@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './style.css';
 import { myCurrencies } from './myCurrencies';
+import Result from '../Result';
 
 const Form = () => {
   const [amount, setAmount] = useState('');
@@ -28,7 +29,7 @@ const Form = () => {
 
   return (
     <>
-      <form className="form" onSubmit={onFormSubmit}>
+      <form className="form" onSubmit={onFormSubmit} onReset={resetUserInput}>
         <fieldset className="form__fieldset">
           <legend>Kalkulator walut</legend>
           <div className="fieldset__wrapper">
@@ -74,7 +75,6 @@ const Form = () => {
                 className="fieldset__button"
                 type="reset"
                 value="Wyczyść!"
-                onClick={resetUserInput}
               />
             </section>
             <p className="form__paragraph--italic">
@@ -83,12 +83,7 @@ const Form = () => {
           </div>
         </fieldset>
       </form>
-      <div className="result">
-        <p className="result__paragraph">Kwota po przeliczeniu:</p>
-        <span className="result__span">
-          {result.converted} {result.name}
-        </span>
-      </div>
+      <Result converted={result.converted} name={result.name} />
     </>
   );
 };
