@@ -7,7 +7,6 @@ Currency Converter React App helps you quickly and easily convert currencies in 
 ![App screen - wide](https://i.imgur.com/zJY0P4o.png)
 ![App screen - mobile](https://i.imgur.com/2Kyeqmm.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Tools used in the project
 
@@ -18,6 +17,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Flex
 - BEM
 - ES6 & Features
+- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
