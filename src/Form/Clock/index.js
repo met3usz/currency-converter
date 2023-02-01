@@ -1,13 +1,9 @@
-import './style.css';
+import { ClockContent } from './styled';
 import { useCurrentDate } from './useCurrentDate';
 
 const Clock = () => {
   const date = useCurrentDate();
-  return (
-    <div>
-      <p className="fieldset__clock">Dzisiaj jest: {date}</p>
-    </div>
-  );
+  return <ClockContent>Dzisiaj jest: {date}</ClockContent>;
 };
 
 export default Clock;

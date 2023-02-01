@@ -1,8 +1,18 @@
 import { useState } from 'react';
-import './style.css';
 import { myCurrencies } from './myCurrencies';
 import Result from '../Result';
 import Clock from './Clock';
+import {
+  Button,
+  Fieldset,
+  Input,
+  Paragraph,
+  ParagraphItalic,
+  Select,
+  theme,
+  Wrapper,
+} from './styled';
+import { ThemeProvider } from 'styled-components';
 
 const Form = () => {
   const [amount, setAmount] = useState('');
@@ -29,18 +39,15 @@ const Form = () => {
   };
 
   return (
-    <>
-      <form className="form" onSubmit={onFormSubmit} onReset={resetUserInput}>
-        <fieldset className="form__fieldset">
+    <ThemeProvider theme={theme}>
+      <form onSubmit={onFormSubmit} onReset={resetUserInput}>
+        <Fieldset>
           <Clock />
           <legend>Kalkulator walut</legend>
-          <div className="fieldset__wrapper">
-            <p className="fieldset__paragraph">
-              <label className="fieldset__label" htmlFor="cost">
-                Wpisz kwotę w PLN:
-              </label>
-              <input
-                className="fieldset__input"
+          <Wrapper>
+            <Paragraph>
+              <label htmlFor="cost">Wpisz kwotę w PLN:</label>
+              <Input
                 type="number"
                 name="cost"
                 min="1"
@@ -50,13 +57,10 @@ const Form = () => {
                 value={amount}
                 onChange={({ target }) => setAmount(target.value)}
               />
-            </p>
-            <p className="fieldset__paragraph">
-              <label className="fieldset__label" htmlFor="rate">
-                Wybierz walutę:
-              </label>
-              <select
-                className="fieldset__select"
+            </Paragraph>
+            <Paragraph>
+              <label htmlFor="rate">Wybierz walutę:</label>
+              <Select
                 value={rateName}
                 onChange={({ target }) => setRateName(target.value)}
               >
@@ -65,28 +69,20 @@ const Form = () => {
                     {rateName.name}
                   </option>
                 ))}
-              </select>
-            </p>
-            <section className="fieldset__buttons">
-              <input
-                className="fieldset__button"
-                type="submit"
-                value="Przelicz!"
-              />
-              <input
-                className="fieldset__button"
-                type="reset"
-                value="Wyczyść!"
-              />
+              </Select>
+            </Paragraph>
+            <section>
+              <Button type="submit">Przelicz!</Button>
+              <Button type="reset">Wyczyść!</Button>
             </section>
-            <p className="form__paragraph--italic">
+            <ParagraphItalic>
               Średni kurs walut z dnia 29.01.2023
-            </p>
-          </div>
-        </fieldset>
+            </ParagraphItalic>
+          </Wrapper>
+        </Fieldset>
       </form>
       <Result converted={result.converted} name={result.name} />
-    </>
+    </ThemeProvider>
   );
 };
 

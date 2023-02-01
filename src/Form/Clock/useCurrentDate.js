@@ -22,7 +22,7 @@ export const useCurrentDate = () => {
     };
   }, [date]);
 
-  const formatedDate = date.toLocaleString(undefined, clockFormat);
+  const formattedDate = date.toLocaleString(undefined, clockFormat);
 
-  return formatedDate;
+  return formattedDate;
 };
