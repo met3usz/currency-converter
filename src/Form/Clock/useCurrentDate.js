@@ -1,16 +1,15 @@
 import { useEffect, useState } from 'react';
-import './style.css';
 
-const Clock = () => {
-  const clockFormat = {
-    weekday: 'long',
-    day: 'numeric',
-    month: 'long',
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-  };
+const clockFormat = {
+  weekday: 'long',
+  day: 'numeric',
+  month: 'long',
+  hour: '2-digit',
+  minute: '2-digit',
+  second: '2-digit',
+};
 
+export const useCurrentDate = () => {
   const [date, setDate] = useState(new Date());
 
   useEffect(() => {
@@ -25,11 +24,5 @@ const Clock = () => {
 
   const formatedDate = date.toLocaleString(undefined, clockFormat);
 
-  return (
-    <>
-      <p className="fieldset__clock">Dzisiaj jest: {formatedDate}</p>
-    </>
-  );
+  return formatedDate;
 };
-
-export default Clock;

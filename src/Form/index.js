@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './style.css';
 import { myCurrencies } from './myCurrencies';
 import Result from '../Result';
-import Clock from '../Clock';
+import Clock from './Clock';
 
 const Form = () => {
   const [amount, setAmount] = useState('');
