@@ -2,7 +2,7 @@
 
 ### [Visit demo app](https://met3usz.github.io/currency-converter-react/)
 
-Currency Converter React App helps you quickly and easily convert currencies in a click of a button. Simply enter the PLN amount you have in the input field and the app will give you a conversion to another currency. The app lets you select from popular currencies, including USD, GBP, EUR, and UAH.
+Currency Converter React App helps you quickly and easily convert currencies in a click of a button. Simply enter the PLN amount you have in the input field and the app will give you a conversion to another currency. The app lets you select from all the currencies from [exchangerate.host](https://exchangerate.host/) API.
 
 ![App screen - wide](https://i.imgur.com/zJY0P4o.png)
 ![App screen - mobile](https://i.imgur.com/2Kyeqmm.png)
@@ -15,6 +15,7 @@ Currency Converter React App helps you quickly and easily convert currencies in 
 - Flex
 - BEM
 - ES6 & Features
+- Axios
 - This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
