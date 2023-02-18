@@ -12,7 +12,7 @@ export const useRatesData = () => {
         setRatesData({
           state: 'success',
           rates: response.data.rates,
-          date: response.data.data,
+          date: response.data.date,
         });
       } catch (error) {
         setRatesData({
