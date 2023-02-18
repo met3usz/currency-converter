@@ -1,16 +1,16 @@
-import './style.css';
+import { ResultWrapper, ResultSpan } from './styled';
 
 const Result = ({ targetAmount, currency }) => (
-  <div className="result">
+  <ResultWrapper>
     {targetAmount !== undefined && (
       <>
         <p className="result__paragraph">Kwota po przeliczeniu:</p>
-        <span className="result__span">
+        <ResultSpan>
           {targetAmount.toFixed(2)} {currency}
-        </span>
+        </ResultSpan>
       </>
     )}
-  </div>
+  </ResultWrapper>
 );
 
 export default Result;
