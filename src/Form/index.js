@@ -48,9 +48,15 @@ const Form = () => {
           <Clock />
           <Wrapper>
             {ratesData.state === 'loading' ? (
-              <Loading>Sekundka...</Loading>
+              <Loading>
+                Sekundka... Ładujemy dla Ciebie dane z Europejskiego Banku
+                Centralnego ❤️
+              </Loading>
             ) : ratesData.state === 'error' ? (
-              <Failure>Coś nie ten tego</Failure>
+              <Failure>
+                Coś poszło nie tak... Sprawdź swoje połączenie internetowe.
+                Jeśli u Ciebie wszystko śmiga... to nasza wina 😕
+              </Failure>
             ) : (
               <>
                 <Paragraph>
