@@ -74,3 +74,11 @@ export const ParagraphItalic = styled.p`
   font-size: 14px;
   font-style: italic;
 `;
+
+export const Loading = styled.p`
+  color: black;
+`;
+
+export const Failure = styled.p`
+  color: crimson;
+`;

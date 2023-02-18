@@ -1,11 +1,15 @@
 import './style.css';
 
-const Result = ({ converted, name }) => (
+const Result = ({ targetAmount, currency }) => (
   <div className="result">
-    <p className="result__paragraph">Kwota po przeliczeniu:</p>
-    <span className="result__span">
-      {converted} {name}
-    </span>
+    {targetAmount !== undefined && (
+      <>
+        <p className="result__paragraph">Kwota po przeliczeniu:</p>
+        <span className="result__span">
+          {targetAmount.toFixed(2)} {currency}
+        </span>
+      </>
+    )}
   </div>
 );
 
