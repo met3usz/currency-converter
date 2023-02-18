@@ -84,7 +84,7 @@ const Form = () => {
                   <Button type="reset">Wyczyść!</Button>
                 </section>
                 <ParagraphItalic>
-                  Średni kurs walut z dnia 29.01.2023
+                  Średni kurs walut z dnia <strong>{ratesData.date}</strong>
                 </ParagraphItalic>
               </>
             )}
